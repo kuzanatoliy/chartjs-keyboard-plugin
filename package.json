@@ -19,8 +19,10 @@
   "license": "MIT",
   "author": "kuzanatoliy <njkznu@gmail.com>",
   "type": "module",
-  "main": "index.js",
   "scripts": {
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "npm run build:esm & npm run build:cjs",
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write .",
     "commitlint": "commitlint --edit",
@@ -31,9 +33,25 @@
     "@commitlint/config-conventional": "^21.2.2",
     "@kuzanatoliorg/commitlint-config": "^1.4.0",
     "@kuzanatoliorg/prettier-config": "^1.16.0",
-    "prettier": "^3.9.6"
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2"
   },
   "engines": {
     "node": ">=24.0.0"
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/esm/index.d.cts",
+        "default": "./dist/esm/index.cjs"
+      }
+    }
   }
 }
