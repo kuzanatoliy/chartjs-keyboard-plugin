@@ -1,0 +1,14 @@
+node_modules
+coverage
+.github
+.husky
+src
+.gitignore
+.npmignore
+.prettierrc
+commitlint.config.js
+eslint.config.js
+package-lock.json
+tsconfig.cjs.json
+tsconfig.esm.json
+tsconfig.json

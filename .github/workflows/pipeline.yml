@@ -57,5 +57,7 @@ jobs:
         run: |
           git push
           git push --tags
+      - name: add bundle
+        run: git add -f dist
       - name: publish
         run: npm publish --access public
