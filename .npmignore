@@ -8,6 +8,7 @@ src
 .prettierrc
 commitlint.config.js
 eslint.config.js
+jest.config.cjs
 package-lock.json
 tsconfig.cjs.json
 tsconfig.esm.json
