@@ -1,3 +1,2 @@
-export type TTest = string;
-
-export const TEST_VALUE: TTest = 'test';
+export * from './chartjs-keyboard-plugin';
+export * from './types';
