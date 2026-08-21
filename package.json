@@ -67,5 +67,8 @@
         "default": "./dist/esm/index.cjs"
       }
     }
+  },
+  "dependencies": {
+    "jest-environment-jsdom": "^30.4.1"
   }
 }
