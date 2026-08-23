@@ -43,8 +43,7 @@ export class ChartjsKeyboardPluginEngine {
   };
 
   private blurHandler = () => {
-    this.chart.setActiveElements([]);
-    this.chart.tooltip?.setActiveElements([], { x: 0, y: 0 });
+    this.strategy.hide();
     this.chart.update();
   };
 
