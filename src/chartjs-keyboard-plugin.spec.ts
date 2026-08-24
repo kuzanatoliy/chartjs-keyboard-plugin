@@ -68,15 +68,20 @@ describe('chartjsKeyboardPlugin', () => {
       chart,
       expect.objectContaining({
         name: strategy,
-      })
+      }),
+      expect.any(Object)
     );
   });
 
   it('Should init page with balance strategy by default', () => {
     chartjsKeyboardPlugin.afterInit!(chart, {}, {});
-    expect(ChartjsKeyboardPluginEngine).toHaveBeenCalledWith(chart, {
-      name: 'balance',
-    });
+    expect(ChartjsKeyboardPluginEngine).toHaveBeenCalledWith(
+      chart,
+      {
+        name: 'balance',
+      },
+      expect.any(Object)
+    );
   });
 
   it('Should destroy chart', () => {
