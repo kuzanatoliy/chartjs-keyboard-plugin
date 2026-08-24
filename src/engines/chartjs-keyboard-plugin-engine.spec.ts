@@ -4,13 +4,12 @@
 
 import { Chart } from 'chart.js';
 import { ChartjsKeyboardPluginEngine } from './chartjs-keyboard-plugin-engine';
-import { TNavigationStrategy } from '../types';
+import { ENavigationDirection, TNavigationStrategy } from '../types';
 
 describe('ChartjsKeyboardPluginEngine', () => {
   const updateSpy = jest.fn();
 
   const chart = {
-    canvas: document.createElement('canvas'),
     update: updateSpy,
   } as unknown as Chart;
 
@@ -38,6 +37,8 @@ describe('ChartjsKeyboardPluginEngine', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    //@ts-expect-error need to use mock clean canvas for each test case
+    chart.canvas = document.createElement('canvas');
     chart.canvas.setAttribute('tabindex', '0');
     document.body.appendChild(chart.canvas);
   });
@@ -77,6 +78,7 @@ describe('ChartjsKeyboardPluginEngine', () => {
     ${'Enter'}      | ${displaySpy}
     ${' '}          | ${displaySpy}
   `('Should trigger $event and call operation', ({ eventKey, handler }) => {
+    new ChartjsKeyboardPluginEngine(chart, strategy);
     const event = new KeyboardEvent('keydown', {
       key: eventKey,
       code: eventKey,
@@ -87,7 +89,29 @@ describe('ChartjsKeyboardPluginEngine', () => {
     expect(updateSpy).toHaveBeenCalled();
   });
 
+  it.each`
+    eventKey        | handler
+    ${'ArrowLeft'}  | ${goNextSpy}
+    ${'ArrowRight'} | ${goPreviousSpy}
+  `(
+    'Should trigger $event and call operation in rtl',
+    ({ eventKey, handler }) => {
+      new ChartjsKeyboardPluginEngine(chart, strategy, {
+        direction: ENavigationDirection.RTL,
+      });
+      const event = new KeyboardEvent('keydown', {
+        key: eventKey,
+        code: eventKey,
+        bubbles: true,
+      });
+      chart.canvas.dispatchEvent(event);
+      expect(handler).toHaveBeenCalled();
+      expect(updateSpy).toHaveBeenCalled();
+    }
+  );
+
   it('Should not trigger action', () => {
+    new ChartjsKeyboardPluginEngine(chart, strategy);
     const event = new KeyboardEvent('keydown', {
       key: 'Tab',
       code: 'Tab',
