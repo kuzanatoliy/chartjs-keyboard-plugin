@@ -5,8 +5,8 @@ coverage
 src
 .gitignore
 .npmignore
-.prettierrc
-commitlint.config.js
+.prettierrc.cjs
+commitlint.config.сjs
 eslint.config.js
 jest.config.cjs
 package-lock.json
