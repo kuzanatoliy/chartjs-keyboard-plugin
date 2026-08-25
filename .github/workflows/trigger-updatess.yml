@@ -1,4 +1,4 @@
-name: updates
+name: trigger updatess
 on:
   workflow_run:
     workflows: ['pipeline']
