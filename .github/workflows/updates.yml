@@ -1,4 +1,4 @@
-name: autotest
+name: updates
 on:
   workflow_run:
     workflows: ['pipeline']
@@ -10,7 +10,6 @@ jobs:
   pipeline:
     runs-on: ubuntu-latest
     environment: updates
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Trigger Autotests
         uses: actions/github-script@v9
