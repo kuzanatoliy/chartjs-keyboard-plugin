@@ -20,7 +20,7 @@ jobs:
               owner: 'kuzanatoliy',
               repo: 'chartjs-demo',
               workflow_id: 'update-plugin.yml',
-              ref: 'master'
+              ref: 'master',
               inputs: {
                 plugin: 'chartjs-keyboard-plugin'
               }
