@@ -1,0 +1,28 @@
+name: autotest
+on:
+  workflow_run:
+    workflows: ['pipeline']
+    types:
+      - completed
+  workflow_dispatch:
+  push:
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    environment: updates
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Trigger Autotests
+        uses: actions/github-script@v9
+        with:
+          github-token: ${{ secrets.PLUGIN_UPDATES }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: 'kuzanatoliy',
+              repo: 'chartjs-demo',
+              workflow_id: 'update-plugin.yml',
+              ref: 'master'
+              inputs: {
+                plugin: 'chartjs-keyboard-plugin'
+              }
+            });
