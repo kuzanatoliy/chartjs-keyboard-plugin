@@ -63,6 +63,7 @@ jobs:
         run: npm publish --access public
   trigger-update:
     runs-on: ubuntu-latest
+    needs: publish
     if: ${{ github.ref_name == 'master' && needs.publish.result == 'success'}}
     environment: updates
     steps:
