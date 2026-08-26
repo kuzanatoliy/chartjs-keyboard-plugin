@@ -61,3 +61,22 @@ jobs:
         run: git add -f dist
       - name: publish
         run: npm publish --access public
+  trigger-update:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref_name == 'master' && needs.publish.result == 'success'}}
+    environment: updates
+    steps:
+      - name: Trigger Autotests
+        uses: actions/github-script@v9
+        with:
+          github-token: ${{ secrets.PLUGIN_UPDATES }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: 'kuzanatoliy',
+              repo: 'chartjs-demo',
+              workflow_id: 'update-plugin.yml',
+              ref: 'master',
+              inputs: {
+                plugin: 'chartjs-keyboard-plugin'
+              }
+            });
