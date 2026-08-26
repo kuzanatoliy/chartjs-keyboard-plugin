@@ -6,7 +6,7 @@ src
 .gitignore
 .npmignore
 .prettierrc.cjs
-commitlint.config.сjs
+commitlint.config.cjs
 eslint.config.js
 jest.config.cjs
 package-lock.json
