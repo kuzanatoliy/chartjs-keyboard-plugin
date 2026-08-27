@@ -11,19 +11,19 @@ Watch the [Demo](https://www.youtube.com/watch?v=rJHDyqld9X8).
 #### npm
 
 ```bash
-npm install @kuzanatoliorg/chartjs-keyboard-plugin --save-dev
+npm install @kuzanatoliorg/chartjs-keyboard-plugin
 ```
 
 #### yarn
 
 ```bash
-yarn add @kuzanatoliorg/chartjs-keyboard-plugin --dev
+yarn add @kuzanatoliorg/chartjs-keyboard-plugin
 ```
 
 #### pnpm
 
 ```bash
-pnpm add @kuzanatoliorg/chartjs-keyboard-plugin --dev
+pnpm add @kuzanatoliorg/chartjs-keyboard-plugin
 ```
 
 ### Configuration
