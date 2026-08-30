@@ -1,4 +1,4 @@
-import { NavigationStrategy } from './navigation-strategy';
+import { NavigationStrategy } from './navigation-strategy.js';
 import { setChartActiveElements } from '../helpers';
 
 export class DataNavigationStrategy extends NavigationStrategy {

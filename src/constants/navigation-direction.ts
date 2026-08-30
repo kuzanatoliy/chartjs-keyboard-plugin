@@ -1,4 +1,4 @@
-import { TNavigationDirection } from '../types/navigation-direction.types';
+import { TNavigationDirection } from '../types';
 
 type TNavigationDirectionKey = 'LTR' | 'RTL';
 

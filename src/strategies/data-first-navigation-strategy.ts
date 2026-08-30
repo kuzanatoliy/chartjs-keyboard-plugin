@@ -1,4 +1,4 @@
-import { NavigationStrategy } from './navigation-strategy';
+import { NavigationStrategy } from './navigation-strategy.js';
 
 export class DataFirstNavigationStrategy extends NavigationStrategy {
   public goEnd = () => {
