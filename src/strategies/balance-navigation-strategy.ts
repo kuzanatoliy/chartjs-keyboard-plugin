@@ -1,4 +1,4 @@
-import { NavigationStrategy } from './navigation-strategy.js';
+import { NavigationStrategy } from './navigation-strategy';
 
 export class BalanceNavigationStrategy extends NavigationStrategy {
   public goEnd = () => {

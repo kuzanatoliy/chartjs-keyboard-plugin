@@ -1,2 +1,2 @@
-export * from './set-chart-active-elements.js';
-export * from './is-oneset-chart.js';
+export * from './set-chart-active-elements';
+export * from './is-oneset-chart';

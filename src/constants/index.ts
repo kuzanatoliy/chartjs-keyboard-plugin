@@ -1,2 +1,2 @@
-export * from './navigation-direction.js';
-export * from './navigation-strategy.js';
+export * from './navigation-direction';
+export * from './navigation-strategy';

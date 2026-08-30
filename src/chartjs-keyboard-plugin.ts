@@ -1,6 +1,6 @@
 import type { Chart, Plugin } from 'chart.js';
-import { NavigationStrategy } from './constants/index.js';
-import { ChartjsKeyboardPluginEngine } from './engines/index.js';
+import { NavigationStrategy } from './constants';
+import { ChartjsKeyboardPluginEngine } from './engines';
 import {
   BalanceNavigationStrategy,
   DataFirstNavigationStrategy,

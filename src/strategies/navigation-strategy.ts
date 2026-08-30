@@ -1,5 +1,5 @@
 import type { Chart } from 'chart.js';
-import { isOnesetChart, setChartActiveElements } from '../helpers/index.js';
+import { isOnesetChart, setChartActiveElements } from '../helpers';
 
 export abstract class NavigationStrategy {
   protected datasetIds: number[] = [];

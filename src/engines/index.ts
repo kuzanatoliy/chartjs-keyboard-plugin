@@ -1,1 +1,1 @@
-export * from './chartjs-keyboard-plugin-engine.js';
+export * from './chartjs-keyboard-plugin-engine';

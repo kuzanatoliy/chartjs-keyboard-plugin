@@ -1,5 +1,5 @@
-import type { TNavigationDirection } from './navigation-direction.types.js';
-import type { TNavigationStrategy } from './navigation-strategy.types.js';
+import type { TNavigationDirection } from './navigation-direction.types';
+import type { TNavigationStrategy } from './navigation-strategy.types';
 
 export type TChartjsKeyboardPluginOptions = {
   strategy?: TNavigationStrategy;
