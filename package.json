@@ -64,8 +64,8 @@
         "default": "./dist/esm/index.js"
       },
       "require": {
-        "types": "./dist/esm/index.d.cts",
-        "default": "./dist/esm/index.cjs"
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
       }
     }
   }
