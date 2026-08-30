@@ -3,8 +3,8 @@ import {
   TNavigationDirection,
   type TChartjsKeyboardPluginEngineOptions,
   type TNavigationStrategyHandlers,
-} from '../types';
-import { NavigationDirection } from '../constants';
+} from '../types/index.js';
+import { NavigationDirection } from '../constants/index.js';
 
 const NavigationKeys = {
   ARROW_LEFT: 'ArrowLeft',

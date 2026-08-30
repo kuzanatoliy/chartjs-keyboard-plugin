@@ -1,5 +1,5 @@
 import { NavigationStrategy } from './navigation-strategy.js';
-import { setChartActiveElements } from '../helpers';
+import { setChartActiveElements } from '../helpers/index.js';
 
 export class DataSetNavigationStrategy extends NavigationStrategy {
   protected setChartActiveElements = () => {
