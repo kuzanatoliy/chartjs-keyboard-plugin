@@ -1,4 +1,4 @@
-import { TNavigationStrategy } from '../types';
+import { TNavigationStrategy } from '../types/index.js';
 
 type TNavigationStrategyKey =
   'DATA' | 'DATASET' | 'DATA_FIRST' | 'DATASET_FIRST' | 'BALANCE';

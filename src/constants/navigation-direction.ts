@@ -1,4 +1,4 @@
-import { TNavigationDirection } from '../types';
+import { TNavigationDirection } from '../types/index.js';
 
 type TNavigationDirectionKey = 'LTR' | 'RTL';
 
