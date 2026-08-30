@@ -3,8 +3,9 @@
  */
 
 import { Chart } from 'chart.js';
+import { NavigationDirection } from '../constants';
 import { ChartjsKeyboardPluginEngine } from './chartjs-keyboard-plugin-engine';
-import { ENavigationDirection, TNavigationStrategy } from '../types';
+import { TNavigationStrategyHandlers } from '../types/navigation-strategy-handlers.types';
 
 describe('ChartjsKeyboardPluginEngine', () => {
   const updateSpy = jest.fn();
@@ -33,7 +34,7 @@ describe('ChartjsKeyboardPluginEngine', () => {
     goNextDataSet: goNextDataSetSpy,
     goPrevious: goPreviousSpy,
     goPreviousDataSet: goPreviousDataSetSpy,
-  } as unknown as TNavigationStrategy;
+  } as unknown as TNavigationStrategyHandlers;
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -97,7 +98,7 @@ describe('ChartjsKeyboardPluginEngine', () => {
     'Should trigger $event and call operation in rtl',
     ({ eventKey, handler }) => {
       new ChartjsKeyboardPluginEngine(chart, strategy, {
-        direction: ENavigationDirection.RTL,
+        direction: NavigationDirection.RTL,
       });
       const event = new KeyboardEvent('keydown', {
         key: eventKey,

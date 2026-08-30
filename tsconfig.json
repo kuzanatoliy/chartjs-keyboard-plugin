@@ -11,6 +11,5 @@
     "skipLibCheck": true,
     "types": ["jest"]
   },
-  "include": ["src/**/*", "global.d.ts"],
-  "exclude": ["**/*.spec.ts", "**/*.spec.tsx", "**/*.test.ts", "**/*.test.tsx"]
+  "include": ["src/**/*", "global.d.ts"]
 }

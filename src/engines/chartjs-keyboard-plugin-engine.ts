@@ -1,9 +1,10 @@
 import type { Chart } from 'chart.js';
 import {
-  ENavigationDirection,
+  TNavigationDirection,
   type TChartjsKeyboardPluginEngineOptions,
-  type TNavigationStrategy,
+  type TNavigationStrategyHandlers,
 } from '../types';
+import { NavigationDirection } from '../constants';
 
 const NavigationKeys = {
   ARROW_LEFT: 'ArrowLeft',
@@ -34,8 +35,8 @@ const DEFAULT_OPTIONS = {};
 export class ChartjsKeyboardPluginEngine {
   private chart: Chart;
   private abortController = new AbortController();
-  private strategy: TNavigationStrategy;
-  private direction: ENavigationDirection;
+  private strategy: TNavigationStrategyHandlers;
+  private direction: TNavigationDirection;
 
   private initCanvas = () => {
     if (!this.chart.canvas.hasAttribute('tabIndex')) {
@@ -61,7 +62,7 @@ export class ChartjsKeyboardPluginEngine {
     }
     switch (event.key) {
       case NavigationKeys.ARROW_LEFT:
-        if (this.direction === ENavigationDirection.LTR) {
+        if (this.direction === NavigationDirection.LTR) {
           this.strategy.goPrevious();
         } else {
           this.strategy.goNext();
@@ -71,7 +72,7 @@ export class ChartjsKeyboardPluginEngine {
         this.strategy.goPreviousDataSet();
         break;
       case NavigationKeys.ARROW_RIGHT:
-        if (this.direction === ENavigationDirection.LTR) {
+        if (this.direction === NavigationDirection.LTR) {
           this.strategy.goNext();
         } else {
           this.strategy.goPrevious();
@@ -99,12 +100,12 @@ export class ChartjsKeyboardPluginEngine {
 
   constructor(
     chart: Chart,
-    strategy: TNavigationStrategy,
+    strategy: TNavigationStrategyHandlers,
     options: TChartjsKeyboardPluginEngineOptions = DEFAULT_OPTIONS
   ) {
     this.chart = chart;
     this.strategy = strategy;
-    this.direction = options.direction || ENavigationDirection.LTR;
+    this.direction = options.direction || NavigationDirection.LTR;
 
     this.initCanvas();
 
