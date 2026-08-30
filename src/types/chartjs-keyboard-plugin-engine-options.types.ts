@@ -1,5 +1,5 @@
-import type { ENavigationDirection } from './direction.types';
+import type { TNavigationDirection } from './navigation-direction.types';
 
 export type TChartjsKeyboardPluginEngineOptions = {
-  direction?: ENavigationDirection;
+  direction?: TNavigationDirection;
 };
