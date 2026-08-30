@@ -2,6 +2,9 @@ module.exports = {
   transform: {
     '^.+\\.(ts|tsx|js|jsx)$': '<rootDir>/node_modules/ts-jest',
   },
+  moduleNameMapper: {
+    '^(\\..*)\\.js$': '$1',
+  },
   clearMocks: true,
   collectCoverage: true,
   coverageDirectory: 'coverage',
