@@ -26,6 +26,19 @@ yarn add @kuzanatoliorg/chartjs-keyboard-plugin
 pnpm add @kuzanatoliorg/chartjs-keyboard-plugin
 ```
 
+### Keyboard Navigation
+
+The plugin supports the following keys for navigating the chart (behavior may vary slightly depending on the active strategy):
+
+- **Arrow Left**: Navigates to the previous item (or next in RTL mode).
+- **Arrow Right**: Navigates to the next item (or previous in RTL mode).
+- **Arrow Up**: Navigates to the previous item (or previous dataset in the `balance` strategy).
+- **Arrow Down**: Navigates to the next item (or next dataset in the `balance` strategy).
+- **Home**: Navigates to the first item.
+- **End**: Navigates to the last item.
+- **Enter** / **Space**: Activates the data item and displays its tooltip.
+- **Escape**: Deactivates the data item and hides its tooltip.
+
 ### Configuration
 
 The main property to control keyboard behavior is `strategy`. It allows you to choose one of five strategies that can change the user experience.
