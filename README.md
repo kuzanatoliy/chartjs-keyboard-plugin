@@ -26,6 +26,61 @@ yarn add @kuzanatoliorg/chartjs-keyboard-plugin
 pnpm add @kuzanatoliorg/chartjs-keyboard-plugin
 ```
 
+### Getting Started
+
+To enable keyboard navigation, you need to register the plugin with Chart.js. Once registered, the plugin will automatically add keyboard support to your charts.
+
+#### Chart.js
+
+Register the plugin globally in your application:
+
+```javascript
+import Chart from 'chart.js/auto';
+import { chartjsKeyboardPlugin } from '@kuzanatoliorg/chartjs-keyboard-plugin';
+
+Chart.register(chartjsKeyboardPlugin);
+```
+
+Or you can register the plugin for a specific chart:
+
+```javascript
+import Chart from 'chart.js/auto';
+import { chartjsKeyboardPlugin } from '@kuzanatoliorg/chartjs-keyboard-plugin';
+
+const chart = new Chart(ctx, {
+    // ...
+    plugins: [chartjsKeyboardPlugin]
+});
+```
+
+#### react-chartjs-2
+
+For React applications using `react-chartjs-2`, register the plugin globally with `ChartJS`:
+
+```javascript
+import { Chart as ChartJS } from 'chart.js';
+import { chartjsKeyboardPlugin } from '@kuzanatoliorg/chartjs-keyboard-plugin';
+
+ChartJS.register(chartjsKeyboardPlugin);
+```
+
+Or you can register the plugin for a specific chart:
+
+```javascript
+import { Bar } from 'react-chartjs-2';
+import { chartjsKeyboardPlugin } from '@kuzanatoliorg/chartjs-keyboard-plugin';
+
+function MyChart() {
+  return (
+    <Bar
+      data={data}
+      options={options}
+      plugins={[chartjsKeyboardPlugin]}
+    />
+  );
+}
+```
+
 ### Keyboard Navigation
 
 The plugin supports the following keys for navigating the chart (behavior may vary slightly depending on the active strategy):
