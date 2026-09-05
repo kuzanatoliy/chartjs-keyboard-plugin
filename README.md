@@ -1,6 +1,6 @@
 # chartjs-keyboard-plugin
 
-The plugin adds keyboard navigation to the Chart.js library. It supports a few navigation strategies that allow specifying usage scenarios and improving user experience.
+The plugin adds keyboard navigation to the [Chart.js](https://www.chartjs.org/docs/latest/) library. It supports a few navigation strategies that allow specifying usage scenarios and improving user experience.
 
 To test the plugin, you can use the [Demo application](https://kuzanatoliy.github.io/chartjs-demo/).
 
@@ -28,7 +28,7 @@ pnpm add @kuzanatoliorg/chartjs-keyboard-plugin
 
 ### Getting Started
 
-To enable keyboard navigation, you need to register the plugin with Chart.js. Once registered, the plugin will automatically add keyboard support to your charts.
+To enable keyboard navigation, you need to register the plugin with [Chart.js](https://www.chartjs.org/docs/latest/). Once registered, the plugin will automatically add keyboard support to your charts.
 
 #### Chart.js
 
@@ -80,6 +80,8 @@ function MyChart() {
   );
 }
 ```
+
+> **Note:** The plugin were tested on **Chart.js** **`3.x`** and **`4.x`** versions and support versions higher than **`3.x`**.
 
 ### Keyboard Navigation
 
