@@ -15,8 +15,9 @@ An accessibility-focused **Chart.js plugin that implements seamless keyboard nav
 - [Getting Started](#getting-started)
   - [Vanilla Chart.js Execution](#vanilla-chartjs-execution)
   - [React Framework Integration](#react-framework-integration-react-chartjs-2)
-- [Keyboard Mappings](#️keyboard-mappings)
-- [Configuration Options](#️configuration-options)
+  - [Canvas Focus & Accessibility](#canvas-focus--accessibility)
+- [Keyboard Mappings](#keyboard-mappings)
+- [Configuration Options](#configuration-options)
   - [Navigation Strategies Breakdown](#navigation-strategies-breakdown)
 - [TypeScript Definitions](#typescript-definitions)
 
@@ -108,6 +109,14 @@ function MyChart() {
   );
 }
 ```
+
+### Canvas Focus & Accessibility
+
+For keyboard navigation to work, the HTML5 `<canvas>` element must be focusable so it can capture keydown events.
+
+- **Automated Setup:** If your `<canvas>` element lacks a `tabindex` attribute, **the plugin will automatically inject `tabindex="0"`** upon initialization. This allows users to instantly navigate to the chart container via the `Tab` key.
+
+* **Custom Control:** If you prefer manual layout orchestration or want to exclude the chart from a specific tab order sequence, you can pre-define any valid `tabindex` (e.g., `<canvas tabindex="1">` or `tabindex="-1"`) directly in your HTML structure, and the plugin will respect your custom configuration without overriding it.
 
 > **💡 Compatibility Note:** Fully tested and optimized for **Chart.js `3.x`** and **`4.x+`** frameworks.
 
