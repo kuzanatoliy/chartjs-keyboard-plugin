@@ -148,9 +148,9 @@ const chart = new Chart(ctx, {
     options: {
         plugins: {
             chartjsKeyboardPlugin: {
-                // Select navigation mechanic: 'balance' | 'data-first' | 'dataset-first' | 'data' | 'dataset'
+                // Select navigation mechanic: 'balance' (default) | 'data-first' | 'dataset-first' | 'data' | 'dataset'
                 strategy: 'balance',
-                // Interface text layout flow: 'ltr' | 'rtl'
+                // Interface text layout flow: 'ltr' (default) | 'rtl'
                 direction: 'ltr'
             },
         }
