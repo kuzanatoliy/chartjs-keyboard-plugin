@@ -139,7 +139,7 @@ The plugin supports the following keys for navigating the chart UI (behavior may
 
 ---
 
-# Configuration Options
+## Configuration Options
 
 Fine-tune keyboard targeting behaviors via the main `chartjsKeyboardPlugin` configuration envelope:
 
